@@ -11,6 +11,7 @@
  import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import SplashScreen from './src/screens/splashScreen';
 import DashboardScreen from './src/screens/dashBoardScreen';
+import {enableLatestRenderer} from 'react-native-maps';
  
  
  
