@@ -22,6 +22,7 @@ const CustomButton = ({
 
 const styles =StyleSheet.create({
     btnStyle:{
+        width:"100%",
         backgroundColor:"white",
         borderRadius:4,
         borderWidth:1,

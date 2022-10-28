@@ -21,38 +21,35 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 
 
-const DashboardScreen = ({ navigation , route }) => {
-    const details =route.params.details;
-    console.log("============>",details);
 
+const DashboardScreen = ({ navigation }) => {
     const { width, height } = Dimensions.get('window');
     const ASPECT_RATIO = width / height;
-    const LATITUDE_DELTA = 0.01;
+    const LATITUDE_DELTA = 0.0922;
     const LONGITUDE_DELTA = LATITUDE_DELTA * ASPECT_RATIO;
     const isDarkMode = useColorScheme() === 'dark';
     const [state, setState] = useState({
         pickupCords: {
-            latitude: 45.47002619963983,
-            longitude: 9.172215525195016,
+            latitude: 14.146708944340446,
+            longitude: 75.06358525115908,
             latitudeDelta: LATITUDE_DELTA,
             longitudeDelta: LONGITUDE_DELTA
         },
         dropLocationCords: {
-            latitude: details.coordinate.latitude,
-            longitude: details.coordinate.longitude,
+            latitude: 13.92370911551488,
+            longitude: 75.56368433764177,
             latitudeDelta: LATITUDE_DELTA,
             longitudeDelta: LONGITUDE_DELTA
+
         }
     })
-   
-    const milanCathedralCord= {latitude : 45.46415779784021, longitude: 9.192784806807744}
-    const galleriaCord={latitude : 45.46596556409419, longitude: 9.190027176406062}
+
     const { pickupCords, dropLocationCords } = state
     const GOOGLE_MAPS_APIKEY = 'AIzaSyDVAHVf1f9bryDBlpKz1tjjlRo2dr_83vM';
 
-    // const onPressLocation = () => {
-    //     navigation.navigate("ChooseLocation", { getAddress: fetchValues })
-    // }
+    const onPressLocation = () => {
+        navigation.navigate("ChooseLocation", { getAddress: fetchValues })
+    }
 
     const fetchValues = (data) => {
         setState({
@@ -82,23 +79,18 @@ const DashboardScreen = ({ navigation , route }) => {
                     style={StyleSheet.absoluteFillObject}
                     initialRegion={pickupCords}
                 >
-                
                     <Marker
-                        coordinate={pickupCords}
-                        description={'You are here'}>
-                       <Image source={require('../assets/images/man.png')} style={{height: 35, width:35 }} />
+                        coordinate={pickupCords}>
+                        <View style={{ backgroundColor: "red", padding: 10 }}>
+                            <Text>SF</Text></View>
                     </Marker>
-                 
                     <Marker
-                        coordinate={dropLocationCords}
-                        description={'You are here'}>
-                       <Image source={require('../assets/map_marker.png')} style={{height: 35, width:35 }} />
-                    </Marker>
+                        coordinate={dropLocationCords} />
                     <MapViewDirections
                         origin={pickupCords}
                         destination={dropLocationCords}
                         apikey={GOOGLE_MAPS_APIKEY}
-                        mode={"TRANSIT"}
+
                         strokeWidth={3}
                         strokeColor="hotpink"
                         optimizeWaypoints={true}
@@ -115,6 +107,17 @@ const DashboardScreen = ({ navigation , route }) => {
 
                     />
                 </MapView>
+            </View>
+
+
+            <View style={styles.bottomCard}>
+                <Text style={{ color: "black" }}>Where are you going..?</Text>
+
+                <TouchableOpacity style={styles.inputStyle}
+                    onPress={onPressLocation}>
+                    <Text style={{ color: "black" }}> Choose your location</Text>
+
+                </TouchableOpacity>
             </View>
         </View>
 

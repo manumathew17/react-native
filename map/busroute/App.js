@@ -12,6 +12,8 @@
 import SplashScreen from './src/screens/splashScreen';
 import DashboardScreen from './src/screens/dashBoardScreen';
 import ChooseLocationScreen from './src/screens/chooseLocationScreen';
+import ExploreScreen from './src/screens/exploreScreen';
+import DetailScreen from './src/screens/detailsScreen';
 import {enableLatestRenderer} from 'react-native-maps';
  
  
@@ -28,6 +30,8 @@ import {enableLatestRenderer} from 'react-native-maps';
          <Stack.Screen name="SplashScreen" component={SplashScreen}/>
          <Stack.Screen name="Dashboard" component={DashboardScreen} />
          <Stack.Screen name="ChooseLocation" component={ChooseLocationScreen}/>
+         <Stack.Screen name='Explore' component={ExploreScreen}/>
+         <Stack.Screen name='Details' component={DetailScreen}/>
        </Stack.Navigator>
      </NavigationContainer>
    );

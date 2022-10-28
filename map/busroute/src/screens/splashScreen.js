@@ -18,7 +18,7 @@ const SplashScreen = ({ navigation }) => {
     const isDarkMode = useColorScheme() === 'dark';
 
     setTimeout(() => {
-        navigation.replace('Dashboard'); //this.props.navigation.navigate('Login')
+        navigation.replace('Explore'); //this.props.navigation.navigate('Login')
       }, 5000);
 
 
