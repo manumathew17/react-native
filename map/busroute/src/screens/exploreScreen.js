@@ -19,6 +19,8 @@ import { Marker } from 'react-native-maps';
 import { markers, mapDarkStyle, mapStandardStyle } from '../model/mapData';
 
 import { useTheme } from '@react-navigation/native';
+import generalStyles from '../styles/generalStyles';
+import { useTranslation } from 'react-i18next';
 
 const { width, height } = Dimensions.get("window");
 const CARD_HEIGHT = 220;
@@ -27,6 +29,7 @@ const SPACING_FOR_CARD_INSET = width * 0.1 - 10;
 
 const ExploreScreen = ({ navigation })  => {
   const theme = useTheme();
+  const {t, i18n} =useTranslation()
 
   const initialMapState = {
     markers,
@@ -135,7 +138,10 @@ const ExploreScreen = ({ navigation })  => {
         })}
       </MapView>
 
-
+      <Image
+                style={styles.profileIcon}
+                source={require('../assets/images/account.png')}
+            />
       <Animated.ScrollView
         ref={_scrollView}
         horizontal
@@ -190,7 +196,7 @@ const ExploreScreen = ({ navigation })  => {
                 >
                   <Text style={[styles.textSign, {
                     color: 'black'
-                  }]}>Details</Text>
+                  }]}>{t('welcomeText')}</Text>
                 </TouchableOpacity>
               </View>
             </View>
@@ -247,6 +253,14 @@ const styles = StyleSheet.create({
   scrollView: {
     position: "absolute",
     bottom: 0,
+    left: 0,
+    right: 0,
+    paddingVertical: 10,
+  },
+
+  profileIcon:{
+    position: "absolute",
+    top: 0,
     left: 0,
     right: 0,
     paddingVertical: 10,

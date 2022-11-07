@@ -15,6 +15,7 @@ import ChooseLocationScreen from './src/screens/chooseLocationScreen';
 import ExploreScreen from './src/screens/exploreScreen';
 import DetailScreen from './src/screens/detailsScreen';
 import {enableLatestRenderer} from 'react-native-maps';
+import { useTranslation } from 'react-i18next';
  
  
  
@@ -22,6 +23,8 @@ import {enableLatestRenderer} from 'react-native-maps';
  /* $FlowFixMe[missing-local-annot] The type annotation(s) required by Flow's
   * LTI update could not be added via codemod */
  const App = () => {
+  const {t, i18n}=useTranslation()
+  i18n.changeLanguage('fr')
  
    return (
      <NavigationContainer>

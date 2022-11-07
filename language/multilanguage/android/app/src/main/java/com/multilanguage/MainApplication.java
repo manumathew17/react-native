@@ -8,8 +8,11 @@ import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.config.ReactFeatureFlags;
+import com.facebook.react.shell.MainReactPackage;
 import com.facebook.soloader.SoLoader;
 import com.multilanguage.newarchitecture.MainApplicationReactNativeHost;
+import com.oblador.vectoricons.VectorIconsPackage;
+
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
