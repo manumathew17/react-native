@@ -1,0 +1,16 @@
+{
+    "translation":{
+        "welcome":"welcome",
+        "start_pedaling":"start pedaling",
+        "start_pedaling_desc":"Start pedaling for today \n \nget points and badges",
+        "last_activity":"Last activity",
+        "days_ago":"Days ago",
+        "distance":"Distance",
+        "time_passed":"Time passed",
+        "co2_saving":"CO2 savings",
+        "fuel_saving":"Fuel saving",
+
+        "language":"Language",
+        "tc":"terms and conditions"
+    }
+}

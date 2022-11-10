@@ -26,6 +26,8 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
+import i18next from './src/res/lang/i18n'
+
 import SplashScreen from './src/screens/splashScreen';
 import DashboardScreen from './src/screens/dashboardScreen';
 import LanguageSelectScreen from './src/screens/languageSelectScreen';

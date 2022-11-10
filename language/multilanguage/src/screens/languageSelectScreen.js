@@ -1,13 +1,14 @@
 import { StyleSheet, Text, TouchableOpacity, FlatList, StatusBar, SafeAreaView } from 'react-native';
 import React, { Component, useState } from 'react'
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useTranslation } from 'react-i18next';
 const DATA = [
     {
         id: "en",
         title: "English",
     },
     {
-        id: "ge",
+        id: "de",
         title: "German",
     },
     {
@@ -32,17 +33,29 @@ const Item = ({ item, onPress, backgroundColor, textColor }) => (
     </TouchableOpacity>
 );
 
-const storeData = async (value) => {
-    try {
-      await AsyncStorage.setItem('language', value.id)
-    } catch (e) {
-      
-    }
-  }
 
-const LanguageSelectScreen = ({ navigation }) => {
+
+const LanguageSelectScreen = ({ route, navigation }) => {
 
     const [selectedId, setSelectedId] = useState(null);
+    const { navigateNext } = route.params;
+    const {t, i18n} =useTranslation()
+    const storeData = async (value, navigateNext, navigation) => {
+       
+        i18n.changeLanguage(value.id)
+        try {
+           
+            await AsyncStorage.setItem('language', value.id)
+            if (navigateNext) {
+                navigation.navigate('Dashboard')
+            }
+            else {
+                navigation.goBack()
+            }
+        } catch (e) {
+    
+        }
+    }
 
     const renderItem = ({ item }) => {
         const backgroundColor = item.id === selectedId ? "#f9b818" : "#f5e9ba";
@@ -51,7 +64,7 @@ const LanguageSelectScreen = ({ navigation }) => {
         return (
             <Item
                 item={item}
-                onPress={() => storeData(item)}
+                onPress={() => storeData(item, navigateNext, navigation)}
                 backgroundColor={{ backgroundColor }}
                 textColor={{ color }}
             />
@@ -62,7 +75,7 @@ const LanguageSelectScreen = ({ navigation }) => {
         <SafeAreaView style={styles.container}>
 
             <Text style={styles.header}> Choose your language</Text>
-           
+
             <FlatList
                 data={DATA}
                 renderItem={renderItem}

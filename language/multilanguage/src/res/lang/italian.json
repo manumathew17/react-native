@@ -1,0 +1,16 @@
+{
+    "translation":{
+        "welcome":"italian",
+        "start_pedaling":"Inizia a pedalare",
+        "start_pedaling_desc":"Inizia a pedalare per oggi\n\nottenere punti e badge",
+        "last_activity":"Ultima attività",
+        "days_ago":"giorni fa",
+        "distance":"Distanza",
+        "time_passed":"Il tempo passò",
+        "co2_saving":"Risparmio di CO2",
+        "fuel_saving":"Risparmio di carburante",
+
+        "language":"linguaggio",
+        "tc":"Termini e Condizioni"
+    }
+}

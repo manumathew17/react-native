@@ -1,0 +1,16 @@
+{
+    "translation":{
+        "welcome":"french",
+        "start_pedaling":"Commencez à pédaler",
+        "start_pedaling_desc":"Commencez à pédaler dès aujourd'hui\n\nobtenir des points et des badges",
+        "last_activity":"Dernière activité il y a ",
+        "days_ago":"jours",
+        "distance":"Distance",
+        "time_passed":"Le temps s'est écoulé",
+        "co2_saving":"Économies de CO2",
+        "fuel_saving":"Économie de carburant",
+
+        "language":"Langue",
+        "tc":"termes et conditions"
+    }
+}

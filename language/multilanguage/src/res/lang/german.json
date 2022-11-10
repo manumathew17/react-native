@@ -1,0 +1,16 @@
+{
+    "translation":{
+        "welcome":"german",
+        "start_pedaling":"Treten Sie in die Pedale",
+        "start_pedaling_desc":"Treten Sie für heute in die Pedale\n\nPunkte und Abzeichen erhalten",
+        "last_activity":"Letzte Aktivität vor",
+        "days_ago":"Tagen",
+        "distance":"Distanz",
+        "time_passed":"Zeit verging",
+        "co2_saving":"CO2-Einsparung",
+        "fuel_saving":"Kraftstoffeinsparung",
+
+        "language":"Sprache",
+        "tc":"Geschäftsbedingungen"
+    }
+}
