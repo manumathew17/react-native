@@ -65,7 +65,7 @@ const LanguageSelectScreen = ({ route, navigation }) => {
             <Item
                 item={item}
                 onPress={() => storeData(item, navigateNext, navigation)}
-                backgroundColor={{ backgroundColor }}
+                // backgroundColor={{ backgroundColor }}
                 textColor={{ color }}
             />
         );
@@ -74,7 +74,7 @@ const LanguageSelectScreen = ({ route, navigation }) => {
     return (
         <SafeAreaView style={styles.container}>
 
-            <Text style={styles.header}> Choose your language</Text>
+            <Text style={styles.header}>{t("choose_lang")}</Text>
 
             <FlatList
                 data={DATA}
@@ -89,13 +89,16 @@ const LanguageSelectScreen = ({ route, navigation }) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: "white"
+        backgroundColor: "white",
+        padding:10
     },
     card: {
         padding: 20,
         marginVertical: 8,
         marginHorizontal: 16,
-        borderRadius: 20
+        borderRadius: 20,
+        borderBottomColor:"black",
+        borderWidth:1
     },
     title: {
         fontSize: 12,

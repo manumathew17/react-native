@@ -11,6 +11,13 @@
         "fuel_saving":"Risparmio di carburante",
 
         "language":"linguaggio",
-        "tc":"Termini e Condizioni"
+        "tc":"Termini e Condizioni",
+        "choose_lang":"scegli la tua LINGUA",
+
+        "all_setting":"Tutte le impostazioni",
+
+        
+        "you_are_byke_hero":"Conosco un Bike Hero!",
+        "byke_hero_desc":"Per il livello successivo completa 3 giorni di attività per 4 settimane consecutive"
     }
 }

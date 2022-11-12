@@ -11,6 +11,12 @@
         "fuel_saving":"Fuel saving",
 
         "language":"Language",
-        "tc":"terms and conditions"
+        "tc":"terms and conditions",
+        "choose_lang":"Choose your language",
+
+        "all_setting":"All settings",
+
+        "you_are_byke_hero":"You are a Bike Hero!",
+        "byke_hero_desc":"For the next level complete 3 days of activity for 4 consecutive weeks"
     }
 }

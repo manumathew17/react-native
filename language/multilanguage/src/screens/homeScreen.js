@@ -19,11 +19,11 @@ const HomeScreen = ({ navigation }) => {
             <View style={styles.topContainer}>
                 <Icon name="bicycle" size={30} color="black" />
                 <View style={{ width: 5 }} />
-                <Text style={styles.normalText}>homeScreen</Text>
+                <Text style={styles.normalText}>105 gg</Text>
                 <View style={{ width: 10 }} />
                 <MaterialCommunityIcons name="star-circle" color={"yellow"} size={30} />
                 <View style={{ width: 5 }} />
-                <Text style={styles.normalText}>{t('welcome')}</Text>
+                <Text style={styles.normalText}>11245 pt</Text>
             </View>
             <View style={{
                 borderBottomColor: 'black',
@@ -32,7 +32,7 @@ const HomeScreen = ({ navigation }) => {
             <View style={styles.containerBlack}>
                 <Icon name="bicycle" size={30} color={"white"} />
                 <View style={{ flexDirection: "column", alignContent: "center", alignItems: "flex-start", marginLeft: 20 }}>
-                    <Text style={[styles.header, { color: "white" }]}>{t('start_pedaling')}</Text>
+                    <Text style={[styles.header, { color: "white" }]}>10465 pt</Text>
                     <Text style={[styles.header, { color: "white", fontSize: 12 }]}>{t('start_pedaling_desc')}</Text>
 
                 </View>

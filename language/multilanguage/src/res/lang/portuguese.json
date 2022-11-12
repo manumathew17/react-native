@@ -11,6 +11,13 @@
         "fuel_saving":"Economia de combustível",
 
         "language":"Língua",
-        "tc":"termos e Condições"
+        "tc":"termos e Condições",
+        "choose_lang":"Escolha seu idioma",
+
+        "all_setting":"Todas as configurações",
+
+        
+        "you_are_byke_hero":"Você é um herói da bicicleta!",
+        "byke_hero_desc":"Para o próximo nível, complete 3 dias de atividade por 4 semanas consecutivas"
     }
 }

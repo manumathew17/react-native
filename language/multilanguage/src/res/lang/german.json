@@ -11,6 +11,13 @@
         "fuel_saving":"Kraftstoffeinsparung",
 
         "language":"Sprache",
-        "tc":"Geschäftsbedingungen"
+        "tc":"Geschäftsbedingungen",
+        "choose_lang":"Wähle deine Sprache",
+
+        "all_setting":"Alle Einstellungen",
+
+        
+        "you_are_byke_hero":"Ich kenne einen Fahrradhelden!",
+        "byke_hero_desc":"Für die nächste Stufe absolvieren Sie 3 Tage Aktivität für 4 aufeinanderfolgende Wochen"
     }
 }

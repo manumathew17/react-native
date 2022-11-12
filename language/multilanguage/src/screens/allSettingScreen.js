@@ -22,7 +22,7 @@ const AllSettingScreen = ({ navigation }) => {
                     />
                 </TouchableOpacity>
 
-                <Text style={styles.headerText}>All settings</Text>
+                <Text style={styles.headerText}>{t("all_setting")}</Text>
                 <View />
             </View>
 
