@@ -1,5 +1,7 @@
 {
     "translation": {
-        "welcomeText": "Welcome to Save biking"
+        "welcomeText": "Welcome to Save biking",
+        "view_detail":"View details",
+        "show_route":"Show route"
     }
 }

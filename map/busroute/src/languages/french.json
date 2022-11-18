@@ -1,5 +1,7 @@
 {
     "translation": {
-        "welcomeText": "Bienvenue sur Save bike"
+        "welcomeText": "Bienvenue sur Save bike",
+        "view_detail":"Voir les détails",
+        "show_route":"Afficher l'itinéraire"
     }
 }

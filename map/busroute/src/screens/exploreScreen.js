@@ -11,8 +11,9 @@ import {
   Dimensions,
   Platform,
 } from "react-native";
-import MapView, {PROVIDER_GOOGLE} from "react-native-maps";
+import MapView, { PROVIDER_GOOGLE } from "react-native-maps";
 import { Marker } from 'react-native-maps';
+import IonIcon from 'react-native-vector-icons/Ionicons';
 
 
 
@@ -27,14 +28,14 @@ const CARD_HEIGHT = 220;
 const CARD_WIDTH = width * 0.8;
 const SPACING_FOR_CARD_INSET = width * 0.1 - 10;
 
-const ExploreScreen = ({ navigation })  => {
+const ExploreScreen = ({ navigation }) => {
   const theme = useTheme();
-  const {t, i18n} =useTranslation()
+  const { t, i18n } = useTranslation()
 
   const initialMapState = {
     markers,
     categories: [
-  ],
+    ],
     region: {
       latitude: 45.47002619963983,
       longitude: 9.172215525195016,
@@ -61,7 +62,7 @@ const ExploreScreen = ({ navigation })  => {
       clearTimeout(regionTimeout);
 
       const regionTimeout = setTimeout(() => {
-        if( mapIndex !== index ) {
+        if (mapIndex !== index) {
           mapIndex = index;
           const { coordinate } = state.markers[index];
           _map.current.animateToRegion(
@@ -96,12 +97,12 @@ const ExploreScreen = ({ navigation })  => {
   const onMarkerPress = (mapEventData) => {
     const markerID = mapEventData._targetInst.return.key;
 
-    let x = (markerID * CARD_WIDTH) + (markerID * 20); 
+    let x = (markerID * CARD_WIDTH) + (markerID * 20);
     if (Platform.OS === 'ios') {
       x = x - SPACING_FOR_CARD_INSET;
     }
 
-    _scrollView.current.scrollTo({x: x, y: 0, animated: true});
+    _scrollView.current.scrollTo({ x: x, y: 0, animated: true });
   }
 
   const _map = React.useRef(null);
@@ -125,7 +126,7 @@ const ExploreScreen = ({ navigation })  => {
             ],
           };
           return (
-            <Marker key={index} coordinate={marker.coordinate} onPress={(e)=>onMarkerPress(e)}>
+            <Marker key={index} coordinate={marker.coordinate} onPress={(e) => onMarkerPress(e)}>
               <Animated.View style={[styles.markerWrap]}>
                 <Animated.Image
                   source={require('../assets/map_marker.png')}
@@ -138,10 +139,13 @@ const ExploreScreen = ({ navigation })  => {
         })}
       </MapView>
 
-      <Image
-                style={styles.profileIcon}
-                source={require('../assets/images/account.png')}
-            />
+      <TouchableOpacity style={{position:"absolute",top:10 ,right:20}}>
+          <IonIcon name='settings' size={30} color="black"
+            onPress={() =>
+              navigation.navigate('Language')
+            }
+          />
+        </TouchableOpacity>
       <Animated.ScrollView
         ref={_scrollView}
         horizontal
@@ -170,25 +174,25 @@ const ExploreScreen = ({ navigation })  => {
               },
             },
           ],
-          {useNativeDriver: true}
+          { useNativeDriver: true }
         )}
       >
-      
-        {state.markers.map((marker, index) =>(
+
+        {state.markers.map((marker, index) => (
           <View style={styles.card} key={index}>
-            <Image 
+            <Image
               source={marker.image}
               style={styles.cardImage}
               resizeMode="cover"
             />
             <View style={styles.textContent}>
               <Text numberOfLines={1} style={styles.cardtitle}>{marker.title}</Text>
-              
+
               <Text numberOfLines={1} style={styles.cardDescription}>{marker.description}</Text>
               <View style={styles.button}>
-              
+
                 <TouchableOpacity
-                  onPress={() => {navigation.navigate('Details', {marker})}}
+                  onPress={() => { navigation.navigate('Details', { marker }) }}
                   style={[styles.signIn, {
                     borderColor: 'black',
                     borderWidth: 1
@@ -196,7 +200,7 @@ const ExploreScreen = ({ navigation })  => {
                 >
                   <Text style={[styles.textSign, {
                     color: 'black'
-                  }]}>{t('welcomeText')}</Text>
+                  }]}>{t("view_detail")}</Text>
                 </TouchableOpacity>
               </View>
             </View>
@@ -214,12 +218,12 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   searchBox: {
-    position:'absolute', 
-    marginTop: Platform.OS === 'ios' ? 40 : 20, 
-    flexDirection:"row",
+    position: 'absolute',
+    marginTop: Platform.OS === 'ios' ? 40 : 20,
+    flexDirection: "row",
     backgroundColor: '#fff',
     width: '90%',
-    alignSelf:'center',
+    alignSelf: 'center',
     borderRadius: 5,
     padding: 10,
     shadowColor: '#ccc',
@@ -229,21 +233,21 @@ const styles = StyleSheet.create({
     elevation: 10,
   },
   chipsScrollView: {
-    position:'absolute', 
-    top:Platform.OS === 'ios' ? 90 : 80, 
-    paddingHorizontal:10
+    position: 'absolute',
+    top: Platform.OS === 'ios' ? 90 : 80,
+    paddingHorizontal: 10
   },
   chipsIcon: {
     marginRight: 5,
   },
   chipsItem: {
-    flexDirection:"row",
-    backgroundColor:'#fff', 
-    borderRadius:20,
-    padding:8,
-    paddingHorizontal:20, 
-    marginHorizontal:10,
-    height:35,
+    flexDirection: "row",
+    backgroundColor: '#fff',
+    borderRadius: 20,
+    padding: 8,
+    paddingHorizontal: 20,
+    marginHorizontal: 10,
+    height: 35,
     shadowColor: '#ccc',
     shadowOffset: { width: 0, height: 3 },
     shadowOpacity: 0.5,
@@ -258,7 +262,7 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
   },
 
-  profileIcon:{
+  profileIcon: {
     position: "absolute",
     top: 0,
     left: 0,
@@ -272,7 +276,7 @@ const styles = StyleSheet.create({
     // padding: 10,
     elevation: 20,
     backgroundColor: "#FFF",
-    borderRadius:15,
+    borderRadius: 15,
     marginHorizontal: 10,
     shadowColor: "#000",
     shadowRadius: 5,
@@ -294,7 +298,7 @@ const styles = StyleSheet.create({
   },
   cardtitle: {
     fontSize: 12,
-    color:"black",
+    color: "black",
     // marginTop: 5,
     fontWeight: "bold",
   },
@@ -305,8 +309,8 @@ const styles = StyleSheet.create({
   markerWrap: {
     alignItems: "center",
     justifyContent: "center",
-    width:50,
-    height:50,
+    width: 50,
+    height: 50,
   },
   marker: {
     width: 30,
@@ -317,15 +321,15 @@ const styles = StyleSheet.create({
     marginTop: 5
   },
   signIn: {
-      width: '100%',
-      padding:5,
-      justifyContent: 'center',
-      alignItems: 'center',
-      borderRadius: 3
+    width: '100%',
+    padding: 5,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 3
   },
   textSign: {
-      fontSize: 14,
-      fontWeight: 'bold'
+    fontSize: 14,
+    fontWeight: 'bold'
   }
 });
 

@@ -1,5 +1,7 @@
 {
     "translation": {
-        "welcomeText": "Willkommen bei Savebiken"
+        "welcomeText": "Willkommen bei Savebiken",
+        "view_detail":"Einzelheiten anzeigen",
+        "show_route":"Zeige Weg"
     }
 }
